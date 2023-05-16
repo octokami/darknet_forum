@@ -7,29 +7,22 @@ In this repository we scraped three different sources of forums, and performed t
 - Linguistic Analysis: vocabulary, word count and emphasis (by the usage of uppercase) are possible extracted features that could differ between domains (Du et al., 2019).
 
 # Folder structure
-- scraper:
-
-Notebooks for scraping the following forums:
+- scraper: Notebooks for scraping the following forums:
     - Dark Web Scraper (8chan)
     - Hidden Surface Web Page Scraper (8kun)
     - Surface Web Page Scraper (VGR)
 
-- data:
-
-Datasets in csv format and a cleaned parquet for pandas DataFrame.
+- data: Datasets in csv format and a cleaned parquet for pandas DataFrame.
   - Dark Web Data Set (8chan)
   - Hidden Surface Web Page Data Set (8kun)
   - Surface Web Page Data Set (VGR)
 
-- output:
-
-Every analysed forum has:
+- output: Every analysed forum has:
   - [source]_analysis.parquet: Sentiment Analysis
   - [source]_dictionary: Most common words and ngrams used in the forum, as part of the linguistic Analysis
   - [source]_ldavis_[n]: A visualisation of the topic modelling from the LDA and [n] topics
 
-- utils
-Module with auxiliary functions.
+- utils: Module with auxiliary functions.
 
 # Scrapers and Extractors
 In this repository, there is code for three different scrapers and one extractor 
