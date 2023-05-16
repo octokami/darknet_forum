@@ -2,9 +2,9 @@
 
 Motivation: Scraping darknet forums has been the object of research in the field of intelligence and security informatics (Fu et al., 2010), (Ding et al., 2021).
 In this repository we scraped three different sources of forums, and performed the following analysis:
-- Sentiment Analysis
-- Topic Modelling: a good approach in understanding the content of darknet forums (Nazah et al. 2021)
-- Linguistic Analysis: Vocabulary, word count and emphasis (by the usage of uppercase) are possible extracted features that could differ between domains (Du et al., 2019)
+- Sentiment Analysis: In combination with Named Entity Recognition (NER) could be an actionable tool for threat intelligence (Evangelatos et al. 2021), (El Barachi, 2022).
+- Topic Modelling: a good approach in understanding the content of darknet forums (Nazah et al. 2021). Technique used: Latent Dirichlet Allocation (LDA). 
+- Linguistic Analysis: vocabulary, word count and emphasis (by the usage of uppercase) are possible extracted features that could differ between domains (Du et al., 2019).
 
 # Folder structure
 - scraper
@@ -22,7 +22,7 @@ Datasets in csv format and a cleaned parquet for pandas DataFrame.
 - output
 Every analysed forum has:
   - [source]_analysis.parquet: Sentiment Analysis
-  - [source]_dictionary: Most common words and ngrams used in the forum
+  - [source]_dictionary: Most common words and ngrams used in the forum, as part of the linguistic Analysis
   - [source]_ldavis_[n]: A visualisation of the topic modelling from the LDA and [n] topics
 
 - utils
@@ -69,7 +69,14 @@ we have found, only the first page of each thread has been scraped instead of al
 The normal requests library is used to scrape the data and the data is obtained via
 BeautifulSoup. It is saved to a `csv` file.
 
+# Future Work
+One popular analysis in the darknet domain is stylometry. As it is more useful in marketplaces rather than forums it was not performed, but it could be an intersting analysis in the future. In marketplaces it is used to track "vendors across marketplaces and in identifying comparable vendors." and to " create a semantic fingerprint which can be used by law enforcement to track or mimic a vendor" (Smith III, 2020). [https://github.com/pranavmaneriker/sysml](Maneriker et al. (2021)) uses a stylometry-based multitask learning approach to this task. 
+
 # Results
+All results of the analysis are on the notebook Text_Analysis.ipynb.
+Create the environment with `conda env create -f environment.yml`
+Then activate it with `conda activate venv`
+
 The [moderation API from OpenAi](https://platform.openai.com/docs/guides/moderation) was not very effective in this studied case. Two different approaches were tested: post per post analysis and for a whole topic. No content was flagged any of the moderated categories: "hate", "hate/threatening", "self-harm", "sexual", "sexual/minors", "violence", "violence/graphic". Scores were very similarly low across the whole dataset. The documentation of the API explicits that it looks for "hateful, harassing, or violent content that:
 - expresses, incites, or promotes hate based on identity
 - intends to harass, threaten, or bully an individual
@@ -78,10 +85,18 @@ The [moderation API from OpenAi](https://platform.openai.com/docs/guides/moderat
 A hypothesis is that the API only flags things that are extremes in their categories. In special the highest score for hate, albeit barely higher than other samples, was for the post "Remember to keep killing <group of people, redacted>. They are afraid, and they know that they don't have any future.". The example does indeed show hate, but even the second in this category and other categories do not present high scores according to the API.
 
 # References
-Fu, T., Abbasi, A. and Chen, H. (2010), "A focused crawler for Dark Web forums". J. Am. Soc. Inf. Sci., 61: 1213-1231. https://doi.org/10.1002/asi.21323
+El Barachi, M., Mathew, S. S., & AlKhatib, M. (2022, July). Combining Named Entity Recognition and Emotion Analysis of Tweets for Early Warning of Violent Actions. In 2022 7th International Conference on Smart and Sustainable Technologies (SpliTech) (pp. 1-6). IEEE.
 
-S. Nazah, S. Huda, J. H. Abawajy and M. M. Hassan (2021), "An Unsupervised Model for Identifying and Characterizing Dark Web Forums," in IEEE Access, vol. 9, pp. 112871-112892, doi: 10.1109/ACCESS.2021.3103319.
+Evangelatos, P., Iliou, C., Mavropoulos, T., Apostolou, K., Tsikrika, T., Vrochidis, S., & Kompatsiaris, I. (2021, July). Named entity recognition in cyber threat intelligence using transformer-based models. In 2021 IEEE International Conference on Cyber Security and Resilience (CSR) (pp. 348-353). IEEE.
 
-P. -Y. Du, M. Ebrahimi, N. Zhang, H. Chen, R. A. Brown and S. Samtani, (2019) "Identifying High-Impact Opioid Products and Key Sellers in Dark Net Marketplaces: An Interpretable Text Analytics Approach,"  IEEE International Conference on Intelligence and Security Informatics (ISI), Shenzhen, China, 2019, pp. 110-115, doi: 10.1109/ISI.2019.8823196.
+Fu, T., Abbasi, A., & Chen, H. (2010). A focused crawler for Dark Web forums. Journal of the American Society for Information Science and Technology, 61(6), 1213-1231.
 
-Z. Ding, V. Benjamin, W. Li and X. Yin, (2021) "Exploring Differences Among Darknet and Surface Internet Hacking Communities," 2021 IEEE International Conference on Intelligence and Security Informatics (ISI), San Antonio, TX, USA, pp. 1-3, doi: 10.1109/ISI53945.2021.9624681.
+Ding, Z., Benjamin, V., Li, W., & Yin, X. (2021, November). Exploring Differences Among Darknet and Surface Internet Hacking Communities. In 2021 IEEE International Conference on Intelligence and Security Informatics (ISI) (pp. 1-3). IEEE.
+
+Du, P. Y., Ebrahimi, M., Zhang, N., Chen, H., Brown, R. A., & Samtani, S. (2019, July). Identifying high-impact opioid products and key sellers in dark net marketplaces: An interpretable text analytics approach. In 2019 IEEE International Conference on Intelligence and Security Informatics (ISI) (pp. 110-115). IEEE.
+
+Maneriker, P., He, Y., & Parthasarathy, S. (2021). SYSML: StYlometry with Structure and Multitask Learning: Implications for Darknet forum migrant analysis. arXiv preprint arXiv:2104.00764.
+
+Nazah, S., Huda, S., Abawajy, J. H., & Hassan, M. M. (2021). An unsupervised model for identifying and characterizing dark web forums. IEEE Access, 9, 112871-112892.
+
+Smith III, J. E., & Hughes, N. E. (2020). Honor Among Thieves: Analyzing Language Features of Darknet Market Vendors. Naval Postgraduate School.

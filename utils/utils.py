@@ -73,6 +73,10 @@ def add_moderation_to_df(df):
   df = df.drop(columns="category_scores")
   return df
 
+def count_words(string):
+    words = string.split()
+    return len(words)
+    
 # define a retry decorator
 def retry_with_exponential_backoff(
     func,
