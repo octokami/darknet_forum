@@ -73,7 +73,7 @@ BeautifulSoup. It is saved to a `csv` file.
 One popular analysis in the darknet domain is stylometry. As it is more useful in marketplaces rather than forums it was not performed, but it could be an intersting analysis in the future. In marketplaces it is used to track "vendors across marketplaces and in identifying comparable vendors." and to " create a semantic fingerprint which can be used by law enforcement to track or mimic a vendor" (Smith III, 2020). [https://github.com/pranavmaneriker/sysml](Maneriker et al. (2021)) uses a stylometry-based multitask learning approach to this task. 
 
 # Results
-All results of the analysis are on the notebook Text_Analysis.ipynb.
+All results of the analysis are on the notebook [Text_Analysis.ipynb](https://github.com/octokami/darknet_forum/blob/main/Text_Analysis.ipynb).
 Create the environment with `conda env create -f environment.yml`
 Then activate it with `conda activate venv`
 
