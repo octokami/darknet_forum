@@ -1,8 +1,8 @@
 name: venv
 channels:
   - pytorch
-  - conda-forge
   - nvidia
+  - conda-forge
   - defaults
 dependencies:
   - abseil-cpp=20211102.0=hd77b12b_0
@@ -30,9 +30,9 @@ dependencies:
   - bs4=4.12.2=py38hd3eb1b0_0
   - bzip2=1.0.8=he774522_0
   - c-ares=1.19.0=h2bbff1b_0
-  - ca-certificates=2023.01.10=haa95532_0
+  - ca-certificates=2023.5.7=h56e8100_0
   - catalogue=2.0.7=py39haa95532_0
-  - certifi=2023.5.7=py39haa95532_0
+  - certifi=2023.5.7=pyhd8ed1ab_0
   - cffi=1.15.1=py39h2bbff1b_3
   - charset-normalizer=2.0.4=pyhd3eb1b0_0
   - click=8.0.4=py39haa95532_0
@@ -86,6 +86,7 @@ dependencies:
   - jsonschema=4.17.3=py39haa95532_0
   - jupyter_client=8.1.0=py39haa95532_0
   - jupyter_core=5.3.0=py39haa95532_0
+  - kaleido-core=0.2.1=h8ffe710_0
   - kiwisolver=1.4.4=py39hd77b12b_0
   - langcodes=3.3.0=pyhd3eb1b0_0
   - lerc=3.0=hd77b12b_0
@@ -120,6 +121,7 @@ dependencies:
   - libwebp-base=1.2.4=h2bbff1b_1
   - lz4-c=1.9.4=h2bbff1b_0
   - markupsafe=2.1.1=py39h2bbff1b_0
+  - mathjax=2.7.7=h57928b3_3
   - matplotlib-base=3.7.1=py39hf11a4ad_1
   - matplotlib-inline=0.1.6=py39haa95532_0
   - mkl=2023.1.0=h8bd8f75_46356
@@ -167,6 +169,7 @@ dependencies:
   - python=3.9.16=h6244533_2
   - python-dateutil=2.8.2=pyhd3eb1b0_0
   - python-fastjsonschema=2.16.2=py39haa95532_0
+  - python-kaleido=0.2.1=pyhd8ed1ab_0
   - python_abi=3.9=2_cp39
   - pytorch=2.0.1=py3.9_cuda11.8_cudnn8_0
   - pytorch-cuda=11.8=h24eeafa_5
@@ -248,4 +251,4 @@ dependencies:
       - torchaudio==2.0.2
       - tzdata==2023.3
       - vadersentiment==3.3.2
-prefix: D:\Users\camil\anaconda3\envs\venv
+prefix: venv
