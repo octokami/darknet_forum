@@ -9,6 +9,8 @@ In this repository we scraped three different sources of forums, and performed t
 - Linguistic Analysis: vocabulary, word count and emphasis (by the usage of uppercase) are possible extracted features that could differ between domains (Du et al., 2019). Used packages: textstat, nltk
 - Moderation: OpenAI
 
+[Results here!](https://htmlpreview.github.io/?https://github.com/octokami/darknet_forum/blob/main/output/Report.html)
+
 # Folder structure
 - scraper: Notebooks for scraping the following forums:
     - Dark Web Scraper (8chan)
