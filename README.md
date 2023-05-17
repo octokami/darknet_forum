@@ -72,11 +72,18 @@ One popular analysis in the darknet domain is stylometry. As it is more useful i
 All results of the analysis are on the notebook [Text_Analysis.ipynb](https://github.com/octokami/darknet_forum/blob/main/Text_Analysis.ipynb), in their respective areas.
 
 ## Implementation
+Clone the repo:
+`git init`
+
+`git clone https://github.com/octokami/darknet_forum.git`
+
+`cd darknet_forum`
+
 Create the environment with: 
 
-``conda env create -f environment.yml``
+`conda env create -f environment.yml`
 
-``conda activate venv``
+`conda activate venv`
 
 ## Limitations
 The [moderation API from OpenAi](https://platform.openai.com/docs/guides/moderation) was not very effective in this studied case. Two different approaches were tested: post per post analysis and for a whole topic. No content was flagged any of the moderated categories: "hate", "hate/threatening", "self-harm", "sexual", "sexual/minors", "violence", "violence/graphic". Scores were very similarly low across the whole dataset. The documentation of the API explicits that it looks for "hateful, harassing, or violent content that:
