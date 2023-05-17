@@ -66,13 +66,18 @@ The normal requests library is used to scrape the data and the data is obtained 
 BeautifulSoup. It is saved to a `csv` file.
 
 # Future Work
-One popular analysis in the darknet domain is stylometry. As it is more useful in marketplaces rather than forums it was not performed, but it could be an intersting analysis in the future. In marketplaces it is used to track "vendors across marketplaces and in identifying comparable vendors." and to " create a semantic fingerprint which can be used by law enforcement to track or mimic a vendor" (Smith III, 2020). [https://github.com/pranavmaneriker/sysml](Maneriker et al. (2021)) uses a stylometry-based multitask learning approach to this task. 
+One popular analysis in the darknet domain is stylometry. As it is more useful in marketplaces rather than forums it was not performed, but it could be an intersting analysis in the future. In marketplaces it is used to track "vendors across marketplaces and in identifying comparable vendors." and to " create a semantic fingerprint which can be used by law enforcement to track or mimic a vendor" (Smith III, 2020). [Maneriker et al. (2021)](https://github.com/pranavmaneriker/sysml) uses a stylometry-based multitask learning approach to this task. 
 
 # Results
-All results of the analysis are on the notebook [Text_Analysis.ipynb](https://github.com/octokami/darknet_forum/blob/main/Text_Analysis.ipynb).
-Create the environment with `conda env create -f environment.yml`
-Then activate it with `conda activate venv`
+All results of the analysis are on the notebook [Text_Analysis.ipynb](https://github.com/octokami/darknet_forum/blob/main/Text_Analysis.ipynb), in their respective areas.
 
+## Implementation
+Create the environment with: 
+
+``conda env create -f environment.yml
+conda activate venv``
+
+## Limitations
 The [moderation API from OpenAi](https://platform.openai.com/docs/guides/moderation) was not very effective in this studied case. Two different approaches were tested: post per post analysis and for a whole topic. No content was flagged any of the moderated categories: "hate", "hate/threatening", "self-harm", "sexual", "sexual/minors", "violence", "violence/graphic". Scores were very similarly low across the whole dataset. The documentation of the API explicits that it looks for "hateful, harassing, or violent content that:
 - expresses, incites, or promotes hate based on identity
 - intends to harass, threaten, or bully an individual
