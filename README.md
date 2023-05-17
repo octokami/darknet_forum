@@ -4,9 +4,10 @@ Motivation: Scraping darknet forums has been the object of research in the field
 Forums in the dark web, in special 8chan, attracted law enforcement attention after the [2019 El Paso shooting](https://www.nbcnews.com/news/us-news/investigators-reasonably-confident-texas-suspect-left-anti-immigrant-screed-tipped-n1039031). Shortly before the event, a four-page message justifying the attack was posted in the forum by the perpetrator. This forced the page to be taken down, even though it is still active on the darkweb. In the deep web, it was rebranded as 8kun. More recently in December 2022, these online radicalisation forums seem to [corroborate violence in Brazil](https://restofworld.org/2023/online-extremism-linked-school-shootings-brazil/). The forum got “popular” after the GamerGate (GG) misogynistic online harassment campaign in 2014, which included doxing, rape threats, and death threats. Since videogames are also a topic in the surface web, it is interesting to perform textual analysis for differences in these platforms. The final goal could be detecting and preventing real attacks.
 
 In this repository we scraped three different sources of forums, and performed the following analysis:
-- Sentiment Analysis: In combination with Named Entity Recognition (NER) could be an actionable tool for threat intelligence (Evangelatos et al. 2021), (El Barachi, 2022).
-- Topic Modelling: a good approach in understanding the content of darknet forums (Nazah et al. 2021). Technique used: Latent Dirichlet Allocation (LDA). 
-- Linguistic Analysis: vocabulary, word count and emphasis (by the usage of uppercase) are possible extracted features that could differ between domains (Du et al., 2019).
+- Sentiment analysis and emotion detection: In combination with Named Entity Recognition (NER) could be an actionable tool for threat intelligence (Evangelatos et al. 2021), (El Barachi, 2022). Used packages: vaderSentiment, TextBlob, spaCy, Transformers (EmoRoBERTa pytorch implementation).
+- Topic Modelling: a good approach in understanding the content of darknet forums (Nazah et al. 2021). Technique used: Latent Dirichlet Allocation (LDA). Used packages: gensim, pyLDAvis
+- Linguistic Analysis: vocabulary, word count and emphasis (by the usage of uppercase) are possible extracted features that could differ between domains (Du et al., 2019). Used packages: textstat, nltk
+- Moderation: OpenAI
 
 # Folder structure
 - scraper: Notebooks for scraping the following forums:
