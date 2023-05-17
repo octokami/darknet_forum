@@ -74,9 +74,9 @@ All results of the analysis are on the notebook [Text_Analysis.ipynb](https://gi
 ## Implementation
 Create the environment with: 
 
-``conda env create -f environment.yml
+``conda env create -f environment.yml``
 
-conda activate venv``
+``conda activate venv``
 
 ## Limitations
 The [moderation API from OpenAi](https://platform.openai.com/docs/guides/moderation) was not very effective in this studied case. Two different approaches were tested: post per post analysis and for a whole topic. No content was flagged any of the moderated categories: "hate", "hate/threatening", "self-harm", "sexual", "sexual/minors", "violence", "violence/graphic". Scores were very similarly low across the whole dataset. The documentation of the API explicits that it looks for "hateful, harassing, or violent content that:
