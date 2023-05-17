@@ -75,6 +75,7 @@ All results of the analysis are on the notebook [Text_Analysis.ipynb](https://gi
 Create the environment with: 
 
 ``conda env create -f environment.yml
+
 conda activate venv``
 
 ## Limitations
